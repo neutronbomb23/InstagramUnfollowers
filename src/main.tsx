@@ -8,7 +8,7 @@ import { UserCheckIcon } from './components/icons/UserCheckIcon';
 import { UserUncheckIcon } from './components/icons/UserUncheckIcon';
 
 const INSTAGRAM_HOSTNAME = 'www.instagram.com';
-const UNFOLLOWERS_PER_PAGE = 50;
+const UNFOLLOWERS_PER_PAGE = 100;
 const WHITELISTED_RESULTS_STORAGE_KEY = 'iu_whitelisted-results';
 
 async function copyListToClipboard(nonFollowersList: readonly Node[]): Promise<void> {
@@ -454,8 +454,9 @@ function App() {
                 await sleep(Math.floor(Math.random() * (6000 - 4000)) + 4000);
 
                 if (counter % 5 === 0) {
-                    setToast({ show: true, text: 'Sleeping 5 minutes to prevent getting temp blocked' });
-                    await sleep(300000);
+                   /* setToast({ show: true, text: 'Sleeping 5 minutes to prevent getting temp blocked' });*/
+                    setToast({show: false});
+                    await sleep(0); // No pause needed, just to check 
                 }
                 setToast({ show: false });
             }
