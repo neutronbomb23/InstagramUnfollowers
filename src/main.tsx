@@ -376,8 +376,8 @@ function App() {
                 scrollCycle++;
                 if (scrollCycle > 6) {
                     scrollCycle = 0;
-                    setToast({ show: true, text: 'Sleeping 10 secs to prevent getting temp blocked' });
-                    await sleep(10000);
+                    setToast({ show: true, text: 'Sleeping 5 secs to prevent getting temp blocked' });
+                    await sleep(5000);
                 }
                 setToast({ show: false });
             }
@@ -448,17 +448,16 @@ function App() {
                     });
                 }
                 // If unfollowing the last user in the list, no reason to wait.
-                if (user === state.selectedResults[state.selectedResults.length - 1]) {
+               /* if (user === state.selectedResults[state.selectedResults.length - 1]) {
                     break;
                 }
-                await sleep(Math.floor(Math.random() * (6000 - 4000)) + 4000);
+                await sleep(Math.floor(Math.random() * (6000 - 4000)) + 4000);*/
 
-                if (counter % 5 === 0) {
+              //if (counter % 5 === 0) {
                    /* setToast({ show: true, text: 'Sleeping 5 minutes to prevent getting temp blocked' });*/
-                    setToast({show: false});
-                    await sleep(0); // No pause needed, just to check 
-                }
-                setToast({ show: false });
+                //    await sleep(0); // No pause needed, just to check 
+                //}
+                // setToast({ show: false });
             }
         };
         unfollow();
